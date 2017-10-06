@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>archivos online</title>
+</head>
+<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="  crossorigin="anonymous"></script>
+<body>
+<div id="enlaces">
+	
+</div>
+<a href=""></a>
+<script type="text/javascript">
+
+var carpetas = ['audio','img','pdf','video'];
+
+
+function createlink(folder){
+
+	return '<a href="./' + folder + '">' + folder + '</a>';
+}
+
+
+function createul(folders){
+	var ul ='<ul>';
+	for (carpeta in folders){
+		ul += '<li>' + createlink(folders[carpeta]) + '</li>';
+	}
+
+	ul += '</ul>';
+	return ul;
+}
+
+function insertul(lugar,folders){
+	$(lugar).html(createul(folders))
+}
+
+insertul('#enlaces' , carpetas);
+
+</script>
+
+</body>
+</html>
